@@ -7,10 +7,18 @@ const routes = [
         name: "contactbook",
         component: ContactBook,
     },
+
     {
-        path: "/:partMatch(.*)*",
+        path: "/:pathMatch(.*)*",
         name: "notfound",
         component: () => import("@/view/NotFound.vue"),
+    },
+
+    {
+        path: "/contacts/:id",
+        name: "contact.edit",
+        component: () => import("@/view/ContactEdit.vue"),
+        props: true //  Truyền các biến trong $router.pấm vào làm props
     },
 ];
 
